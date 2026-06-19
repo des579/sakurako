@@ -1,9 +1,9 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -Wpedantic -std=c11 -O2
+CFLAGS = -std=c11 -O2 # -Wall -Wextra -Wpedantic 
 
-TARGET = app
+TARGET = sakurako
 
-SRC = main.c scripting.c
+SRC = main.c lexer.c str.c
 OBJ = $(SRC:.c=.o)
 
 all: $(TARGET)
@@ -11,7 +11,7 @@ all: $(TARGET)
 $(TARGET): $(OBJ)
 	$(CC) $(OBJ) -o $(TARGET)
 
-%.o: %.c scripting.h
+%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
