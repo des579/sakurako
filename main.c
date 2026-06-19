@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdint.h>
 
 #include "lexer.h"
+#include "vm.h"
 
 int main() {
     char* expression = "function a123(param1: int) {\nprint(123);\n}";
