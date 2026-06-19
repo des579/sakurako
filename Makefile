@@ -3,7 +3,7 @@ CFLAGS = -std=c11 -O2 # -Wall -Wextra -Wpedantic
 
 TARGET = sakurako
 
-SRC = main.c lexer.c str.c vm.c
+SRC = main.c lexer.c str.c vm.c parser.c
 OBJ = $(SRC:.c=.o)
 
 all: $(TARGET)

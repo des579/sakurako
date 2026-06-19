@@ -6,18 +6,21 @@
 #include "str.h"
 
 enum type_e {
-    IDENTIFIER,      // names that aren't built-in
+    TYPE_UNDEFINED,            // for error handling
+    TYPE_WHITESPACE,           // ' ' and '\n'
 
-    VAR, FUNCTION,
+    TYPE_IDENTIFIER,           // names that aren't built-in
 
-    LPAREN, RPAREN,  // ()
-    LBRACK, RBRACK,  // []
-    LBRACE, RBRACE,  // {}
+    TYPE_VAR, TYPE_FUNCTION,
 
-    SEMICOLON,       // ; <- end of line
+    TYPE_LPAREN, TYPE_RPAREN,  // ()
+    TYPE_LBRACK, TYPE_RBRACK,  // []
+    TYPE_LBRACE, TYPE_RBRACE,  // {}
 
-    COMMA, COLON,    // , ;
-    ASSIGN,          // =
+    TYPE_SEMICOLON,       // ; <- end of line
+
+    TYPE_COMMA, TYPE_COLON,    // , ;
+    TYPE_ASSIGN,          // =
 };
 
 struct lexer_s {
