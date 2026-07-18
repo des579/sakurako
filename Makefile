@@ -1,18 +1,18 @@
-CC = gcc
-CFLAGS = -std=c11 -O2 # -Wall -Wextra -Wpedantic 
+CXX = g++
+CXXFLAGS = -std=c++20 -O2 # -Wall  -Wextra -Wpedantic
 
 TARGET = sakurako
 
-SRC = main.c lexer.c str.c vm.c parser.c
-OBJ = $(SRC:.c=.o)
+SRC = main.cpp vm.cpp
+OBJ = $(SRC:.cpp=.o)
 
 all: $(TARGET)
 
 $(TARGET): $(OBJ)
-	$(CC) $(OBJ) -o $(TARGET)
+	$(CXX) $(OBJ) -o $(TARGET)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJ) $(TARGET)
@@ -20,4 +20,3 @@ clean:
 re: clean all
 
 .PHONY: all clean re
-
