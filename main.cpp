@@ -1,10 +1,21 @@
 #include <iostream>
 
 #include "vm.h"
+#include "sakas.h"
 
 using namespace std;
 
 int main() {
+    vector<Instruction>* instructions = parse_file("lol.sakas");
+
+    
+
+    delete instructions;
+    return 0;
+}
+
+
+void test1() {
     VM vm;
     Instruction instruction1, instruction2, jmp_instruction;
     Value value;
@@ -33,7 +44,5 @@ int main() {
 
     vm.pc = 0;
     vm.execute(instructions, 5);
-
-    return 0;
 }
 

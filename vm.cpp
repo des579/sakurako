@@ -22,6 +22,10 @@ int jumpe_instruction(Instruction* instruction, VM* vm);
 int jumpg_instruction(Instruction* instruction, VM* vm);
 int jumpl_instruction(Instruction* instruction, VM* vm);
 
+int VM::execute(vector<Instruction> instructions) {
+    return 0;
+}
+
 int VM::execute(Instruction* instructions, size_t n) {
     if (this->pc >= n) return -1; // TODO
 

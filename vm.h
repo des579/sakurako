@@ -2,7 +2,9 @@
 #define VM_H
 
 #include <stdint.h>
+#include <vector>
 
+using namespace std;
 
 // r1, r2, r3, r4 are registers from Instruction
 enum class Opcode {
@@ -54,6 +56,7 @@ public:
     Value registers[20];
 
     int execute(Instruction* instructions, size_t n);
+    int execute(vector<Instruction> instructions);
 };
 
 #endif // VM_H

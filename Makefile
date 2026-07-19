@@ -3,7 +3,7 @@ CXXFLAGS = -std=c++20 -O2 # -Wall  -Wextra -Wpedantic
 
 TARGET = sakurako
 
-SRC = main.cpp vm.cpp
+SRC = main.cpp vm.cpp sakas.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(TARGET)
