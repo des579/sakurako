@@ -19,6 +19,9 @@ enum class Opcode {
     JMPE,   // val: int, r1 == r2
     JMPL,   // val: int, r1 < r2
     JMPR,   // r1: int
+
+
+    UNDEFINED, // for error handling
 };
 
 struct Value {
