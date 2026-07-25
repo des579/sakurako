@@ -25,11 +25,11 @@ enum class Opcode {
 };
 
 struct Value {
-    enum class Type {I64, F64, PTR};
+    enum class Type {I64, F64, OBJTYPE, PTR};
     Type type;
 
     union {
-        int64_t i64;
+        int64_t i64; // also used to get the object type
         double f64;
         void* ptr;
     };
