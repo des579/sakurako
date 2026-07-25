@@ -1,21 +1,25 @@
 CXX = g++
-CXXFLAGS = -std=c++20 -O2 # -Wall  -Wextra -Wpedantic
+CXXFLAGS = -std=c++20 -O2
 
 TARGET = sakurako
 
-SRC = main.cpp vm.cpp lexer.cpp
-OBJ = $(SRC:.cpp=.o)
+SRCDIR = src
+BUILDDIR = build
+
+SRC = $(wildcard $(SRCDIR)/*.cpp)
+OBJ = $(SRC:$(SRCDIR)/%.cpp=$(BUILDDIR)/%.o)
 
 all: $(TARGET)
 
 $(TARGET): $(OBJ)
-	$(CXX) $(OBJ) -o $(TARGET)
+	$(CXX) $(OBJ) -o $@
 
-%.o: %.cpp
+$(BUILDDIR)/%.o: $(SRCDIR)/%.cpp
+	mkdir -p $(BUILDDIR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ) $(TARGET)
+	rm -rf $(BUILDDIR) $(TARGET)
 
 re: clean all
 
