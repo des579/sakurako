@@ -31,8 +31,10 @@ struct Token {
 
         PLUS, MINUS,            // +, -
         STAR, SLASH,            // *, /
+        EQUALS,                 // =
 
         GREATER,                // >
+        DOT,                    // .
 
         IDENTIFIER,             // just a name
         STRING,                 // the shit between ""

@@ -31,11 +31,13 @@ std::unordered_map<std::string, Token::Type> tokens = {
     {"void", Token::Type::VOID},
 
     {"!", Token::Type::EXCL},
+    {".", Token::Type::DOT},
 
     {"+", Token::Type::PLUS},
     {"-", Token::Type::MINUS},
     {"*", Token::Type::STAR},
     {"/", Token::Type::SLASH},
+    {"=", Token::Type::EQUALS},
 
     {":", Token::Type::COLON},
     {";", Token::Type::SEMICOLON},
@@ -160,8 +162,8 @@ Token Lexer::next_token() {
     else if (token.type == Token::Type::IDENTIFIER || token.type == Token::Type::STRING)
         token.value = token_str;
 
-    std::cout << "token string  : " << token_str << std::endl;
-    std::cout << "      type str: " << token_type_to_string(token.type) << std::endl;
+//     std::cout << "token string  : " << token_str << std::endl;
+//     std::cout << "      type str: " << token_type_to_string(token.type) << std::endl;
 
     return token;
 }
@@ -208,6 +210,7 @@ std::string token_type_to_string(Token::Type type) {
         case Token::Type::VOID: return "VOID";
 
         case Token::Type::EXCL: return "EXCL";
+        case Token::Type::DOT: return "DOT";
 
         case Token::Type::STRQUOTE: return "STRQUOTE";
         case Token::Type::STRQUOTEWHATEVER: return "STRQUOTEWHATEVER";
@@ -219,6 +222,7 @@ std::string token_type_to_string(Token::Type type) {
         case Token::Type::MINUS: return "MINUS";
         case Token::Type::STAR: return "STAR";
         case Token::Type::SLASH: return "SLASH";
+        case Token::Type::EQUALS: return "EQUALS";
 
         case Token::Type::GREATER: return "GREATER";
 

@@ -5,9 +5,11 @@ TARGET = sakurako
 
 SRCDIR = src
 BUILDDIR = build
+TESTDIR = tests
 
-SRC = $(wildcard $(SRCDIR)/*.cpp)
+SRC = $(wildcard $(SRCDIR)/*.cpp $(TESTDIR)/*.cpp main.cpp)
 OBJ = $(SRC:$(SRCDIR)/%.cpp=$(BUILDDIR)/%.o)
+
 
 all: $(TARGET)
 
